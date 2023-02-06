@@ -10,21 +10,21 @@ defmodule Diceware do
                        Map.put(acc, k, v)
                      end)
 
-  def read_dev_random(bytes) when is_integer(bytes) do
+  defp read_dev_random(bytes) when is_integer(bytes) do
     {binary, 0} = System.cmd("head", ~w"-c #{bytes} /dev/random")
     binary
   end
 
-  def to_number(binary, bytes) when is_binary(binary) and is_integer(bytes) do
+  defp to_number(binary, bytes) when is_binary(binary) and is_integer(bytes) do
     <<number::integer-size(bytes)-unit(8)>> = binary
     number
   end
 
-  def to_dice(number) do
+  defp to_dice(number) do
     rem(number, 6) + 1
   end
 
-  def key(bytes \\ 4) do
+  defp key(bytes \\ 4) do
     for _ <- 1..5 do
       read_dev_random(bytes)
       |> to_number(bytes)

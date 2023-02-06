@@ -1,6 +1,8 @@
 # Diceware
 
-**TODO: Add description**
+priv/eff_large_wardlist.txt is downloaded from https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+
+see. https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases
 
 ## Installation
 

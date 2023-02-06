@@ -1,8 +1,17 @@
 # Diceware
 
-priv/eff_large_wardlist.txt is downloaded from https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
+Random Passphrase Generator
 
-see. https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases
+## References
+
+- [ダイスウェア　パスフレーズ](https://www.hyuki.com/diceware/)
+-  https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases
+
+## Resources
+
+`priv/eff_large_wardlist.txt` is downloaded from folowing link.
+
+https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt
 
 ## Installation
 

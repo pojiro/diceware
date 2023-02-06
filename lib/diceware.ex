@@ -24,7 +24,7 @@ defmodule Diceware do
     rem(number, 6) + 1
   end
 
-  def generate(bytes \\ 4) do
+  def key(bytes \\ 4) do
     for _ <- 1..5 do
       read_dev_random(bytes)
       |> to_number(bytes)
@@ -33,11 +33,11 @@ defmodule Diceware do
     |> Enum.reduce("", &"#{&2}#{&1}")
   end
 
-  def get_word() do
-    Map.get(@eff_large_wordmap, generate())
+  def passphrase() do
+    Map.get(@eff_large_wordmap, key())
   end
 
-  def get_words(count \\ 1) when is_integer(count) do
-    for _ <- 1..count, do: get_word()
+  def passphrases(count \\ 1) when is_integer(count) do
+    for _ <- 1..count, do: passphrase()
   end
 end

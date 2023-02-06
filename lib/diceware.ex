@@ -16,7 +16,9 @@ defmodule Diceware do
   end
 
   defp to_number(binary, bytes) when is_binary(binary) and is_integer(bytes) do
-    <<number::integer-size(bytes)-unit(8)>> = binary
+    # NOTE: bitstring options are written in the following link
+    # https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%3C%3C%3E%3E/1-unit-and-size
+    <<number::unsigned-big-integer-size(bytes)-unit(8)>> = binary
     number
   end
 

@@ -11,8 +11,8 @@ defmodule Diceware do
                      end)
 
   defp read_dev_random(bytes) when is_integer(bytes) do
-    {binary, 0} = System.cmd("head", ~w"-c #{bytes} /dev/random")
-    binary
+    File.open!("/dev/random", [:read])
+    |> IO.binread(bytes)
   end
 
   defp to_number(binary, bytes) when is_binary(binary) and is_integer(bytes) do
